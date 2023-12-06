@@ -1,0 +1,276 @@
+{
+ "etype": "TypeError",
+ "evalue": "TypeError('expected string or bytes-like object')",
+ "exception": {
+  "args": [
+   40,
+   39,
+   101,
+   120,
+   112,
+   101,
+   99,
+   116,
+   101,
+   100,
+   32,
+   115,
+   116,
+   114,
+   105,
+   110,
+   103,
+   32,
+   111,
+   114,
+   32,
+   98,
+   121,
+   116,
+   101,
+   115,
+   45,
+   108,
+   105,
+   107,
+   101,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   39,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   84,
+   121,
+   112,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/api/method/erpnext.manufacturing.doctype.bom.bom.get_children' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "93": "",
+    "94": "\t\telif request.path.startswith(\"/api/\"):",
+    "95": "\t\t\tresponse = frappe.api.handle()",
+    "96": "",
+    "97": "\t\telif request.path.startswith(\"/backups\"):"
+   },
+   "lnum": 95
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "53": "\tif call == \"method\":",
+    "54": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "55": "\t\treturn frappe.handler.handle()",
+    "56": "",
+    "57": "\telif call == \"resource\":"
+   },
+   "lnum": 55
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'erpnext.manufacturing.doctype.bom.bom.get_children'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "45": "",
+    "46": "\tif cmd != \"login\":",
+    "47": "\t\tdata = execute_cmd(cmd)",
+    "48": "",
+    "49": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 47
+  },
+  {
+   "call": "(cmd='erpnext.manufacturing.doctype.bom.bom.get_children', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001',...next.manufacturing.doctype.bom.bom.get_children'}",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function get_children>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "83": "\t\tis_valid_http_method(method)",
+    "84": "",
+    "85": "\treturn frappe.call(method, **frappe.form_dict)",
+    "86": "",
+    "87": ""
+   },
+   "lnum": 85
+  },
+  {
+   "call": "(fn=<function get_children>, *args=(), **kwargs={'bom': 'BOM-SADR0101001-001', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children', 'doctype': 'BOM', 'is_root': 'true', 'parent': 'BOM-SADR0101001-001'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function get_children>",
+    "newargs": "{'bom': 'BOM-SADR0101001-001', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children', 'doctype': 'BOM', 'is_root': 'true', 'parent': 'BOM-SADR0101001-001'}"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1620": "\tnewargs = get_newargs(fn, kwargs)",
+    "1621": "",
+    "1622": "\treturn fn(*args, **newargs)",
+    "1623": "",
+    "1624": ""
+   },
+   "lnum": 1622
+  },
+  {
+   "call": "(parent='BOM-SADR0101001-001', is_root='true', **filters={'bom': 'BOM-SADR0101001-001', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children', 'doctype': 'BOM'})",
+   "dump": {
+    "bom_doc": "<BOM: BOM-SADR0101001-001 docstatus=1>",
+    "frappe. msgprint": "<function msgprint>",
+    "global _": "<function _>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/bom/bom.py",
+   "func": "get_children",
+   "lines": {
+    "1140": "\tif frappe.form_dict.parent:",
+    "1141": "\t\tbom_doc = frappe.get_cached_doc(\"BOM\", frappe.form_dict.parent)",
+    "1142": "\t\tfrappe.msgprint(_(bom_doc))",
+    "1143": "\t\tfrappe.has_permission(\"BOM\", doc=bom_doc, throw=True)",
+    "1144": ""
+   },
+   "lnum": 1142
+  },
+  {
+   "call": "(msg=<BOM: BOM-SADR0101001-001 docstatus=1>, title=None, raise_exception=False, as_table=False, as_list=False, indicator=None, alert=False, primary_action=None, is_minimizable=False, wide=False)",
+   "dump": {
+    "_strip_html_tags": "<functools._lru_cache_wrapper object>",
+    "msg": "<BOM: BOM-SADR0101001-001 docstatus=1>",
+    "out": "{'message': <BOM: BOM-SADR0101001-001 docstatus=1>}",
+    "out. message": "<BOM: BOM-SADR0101001-001 docstatus=1>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "msgprint",
+   "lines": {
+    "467": "\t\t\tmsg = [_strip_html_tags(msg) for msg in out.message]",
+    "468": "\t\telse:",
+    "469": "\t\t\tmsg = _strip_html_tags(out.message)",
+    "470": "",
+    "471": "\tif flags.print_messages and out.message:"
+   },
+   "lnum": 469
+  },
+  {
+   "call": "(message=<BOM: BOM-SADR0101001-001 docstatus=1>)",
+   "dump": {
+    "message": "<BOM: BOM-SADR0101001-001 docstatus=1>",
+    "strip_html_tags": "<function strip_html_tags>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "_strip_html_tags",
+   "lines": {
+    "444": "\t@functools.lru_cache(maxsize=1024)",
+    "445": "\tdef _strip_html_tags(message):",
+    "446": "\t\treturn strip_html_tags(message)",
+    "447": "",
+    "448": "\tdef _raise_exception():"
+   },
+   "lnum": 446
+  },
+  {
+   "call": "(text=<BOM: BOM-SADR0101001-001 docstatus=1>)",
+   "dump": {
+    "HTML_TAGS_PATTERN. sub": "<built-in method sub of re.Pattern object>",
+    "global HTML_TAGS_PATTERN": "re.compile('\\\\<[^>]*\\\\>')",
+    "text": "<BOM: BOM-SADR0101001-001 docstatus=1>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py",
+   "func": "strip_html_tags",
+   "lines": {
+    "408": "def strip_html_tags(text):",
+    "409": "\t\"\"\"Remove html tags from text\"\"\"",
+    "410": "\treturn HTML_TAGS_PATTERN.sub(\"\", text)",
+    "411": "",
+    "412": ""
+   },
+   "lnum": 410
+  }
+ ],
+ "locals": {
+  "text": "<BOM: BOM-SADR0101001-001 docstatus=1>"
+ },
+ "pyver": "Python 3.10.12: /home/arun/Projects/frappe-bench/env/bin/python (prefix: /home/arun/Projects/frappe-bench/env)",
+ "timestamp": "2023-12-05 17:11:20.159728",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py\", line 95, in application\n    response = frappe.api.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py\", line 55, in handle\n    return frappe.handler.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 47, in handle\n    data = execute_cmd(cmd)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 85, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 1622, in call\n    return fn(*args, **newargs)\n  File \"/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/bom/bom.py\", line 1142, in get_children\n    frappe.msgprint(_(bom_doc))\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 469, in msgprint\n    msg = _strip_html_tags(out.message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 446, in _strip_html_tags\n    return strip_html_tags(message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py\", line 410, in strip_html_tags\n    return HTML_TAGS_PATTERN.sub(\"\", text)\nTypeError: expected string or bytes-like object\n"
+}

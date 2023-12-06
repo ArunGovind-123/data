@@ -1,0 +1,398 @@
+{
+ "etype": "TypeError",
+ "evalue": "TypeError('expected string or bytes-like object')",
+ "exception": {
+  "args": [
+   40,
+   39,
+   101,
+   120,
+   112,
+   101,
+   99,
+   116,
+   101,
+   100,
+   32,
+   115,
+   116,
+   114,
+   105,
+   110,
+   103,
+   32,
+   111,
+   114,
+   32,
+   98,
+   121,
+   116,
+   101,
+   115,
+   45,
+   108,
+   105,
+   107,
+   101,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   39,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   84,
+   121,
+   112,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/api/method/run_doc_method' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "93": "",
+    "94": "\t\telif request.path.startswith(\"/api/\"):",
+    "95": "\t\t\tresponse = frappe.api.handle()",
+    "96": "",
+    "97": "\t\telif request.path.startswith(\"/backups\"):"
+   },
+   "lnum": 95
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "53": "\tif call == \"method\":",
+    "54": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "55": "\t\treturn frappe.handler.handle()",
+    "56": "",
+    "57": "\telif call == \"resource\":"
+   },
+   "lnum": 55
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'run_doc_method'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "45": "",
+    "46": "\tif cmd != \"login\":",
+    "47": "\t\tdata = execute_cmd(cmd)",
+    "48": "",
+    "49": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 47
+  },
+  {
+   "call": "(cmd='run_doc_method', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'docs': '{\"docstatus\":0,\"doctype\":\"Production P...get_sub_assembly_items', 'cmd': 'run_doc_method'}",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function run_doc_method>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "83": "\t\tis_valid_http_method(method)",
+    "84": "",
+    "85": "\treturn frappe.call(method, **frappe.form_dict)",
+    "86": "",
+    "87": ""
+   },
+   "lnum": 85
+  },
+  {
+   "call": "(fn=<function run_doc_method>, *args=(), **kwargs={'cmd': 'run_doc_method', 'docs': '{\"docstatus\":0,\"doctype\":\"Production Plan\",\"name...house\":\"Stores - A\",\"for_warehouse\":\"Stores - A\"}', 'method': 'get_sub_assembly_items'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function run_doc_method>",
+    "newargs": "{'docs': '{\"docstatus\":0,\"doctype\":\"Production Plan\",\"name...house\":\"Stores - A\",\"for_warehouse\":\"Stores - A\"}', 'method': 'get_sub_assembly_items'}"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1620": "\tnewargs = get_newargs(fn, kwargs)",
+    "1621": "",
+    "1622": "\treturn fn(*args, **newargs)",
+    "1623": "",
+    "1624": ""
+   },
+   "lnum": 1622
+  },
+  {
+   "call": "(method='get_sub_assembly_items', docs={'docstatus': 0, 'doctype': 'Production Plan', '...se': 'Stores - A', 'for_warehouse': 'Stores - A'}, dt=None, dn=None, arg=None, args=None)",
+   "dump": {
+    "args": "None",
+    "doc": "<ProductionPlan: new-production-plan-fzgzsnchwg>",
+    "doc. run_method": "<bound method Document.run_method of <ProductionPlan: new-production-plan-fzgzsnchwg>>",
+    "method": "'get_sub_assembly_items'",
+    "response": "undefined"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "run_doc_method",
+   "lines": {
+    "318": "",
+    "319": "\telif \"args\" in fnargs or not isinstance(args, dict):",
+    "320": "\t\tresponse = doc.run_method(method, args)",
+    "321": "",
+    "322": "\telse:"
+   },
+   "lnum": 320
+  },
+  {
+   "call": "(self=<ProductionPlan: new-production-plan-fzgzsnchwg>, method='get_sub_assembly_items', *args=(None,), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "(None,)",
+    "fn": "<function Document.run_method.<locals>.fn>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<ProductionPlan: new-production-plan-fzgzsnchwg>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "917": "",
+    "918": "\t\tfn.__name__ = str(method)",
+    "919": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "920": "",
+    "921": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 919
+  },
+  {
+   "call": "(self=<ProductionPlan: new-production-plan-fzgzsnchwg>, *args=(None,), **kwargs={})",
+   "dump": {
+    "args": "(None,)",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'get_sub_assembly_items'",
+    "self": "<ProductionPlan: new-production-plan-fzgzsnchwg>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1279": "",
+    "1280": "\t\t\tcomposed = compose(f, *hooks)",
+    "1281": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1282": "",
+    "1283": "\t\treturn composer"
+   },
+   "lnum": 1281
+  },
+  {
+   "call": "(self=<ProductionPlan: new-production-plan-fzgzsnchwg>, method='get_sub_assembly_items', *args=(None,), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "(None,)",
+    "fn": "<function Document.run_method.<locals>.fn>",
+    "kwargs": "{}",
+    "self": "<ProductionPlan: new-production-plan-fzgzsnchwg>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1261": "\t\tdef compose(fn, *hooks):",
+    "1262": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1263": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1264": "\t\t\t\tfor f in hooks:",
+    "1265": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1263
+  },
+  {
+   "call": "(self=<ProductionPlan: new-production-plan-fzgzsnchwg>, *args=(None,), **kwargs={})",
+   "dump": {
+    "args": "(None,)",
+    "kwargs": "{}",
+    "method_object": "<bound method ProductionPlan.get_sub_assembly_it...<ProductionPlan: new-production-plan-fzgzsnchwg>>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "fn",
+   "lines": {
+    "914": "\t\t\t# If method found in __dict__, expect it to be callable",
+    "915": "\t\t\tif method in self.__dict__ or callable(method_object):",
+    "916": "\t\t\t\treturn method_object(*args, **kwargs)",
+    "917": "",
+    "918": "\t\tfn.__name__ = str(method)"
+   },
+   "lnum": 916
+  },
+  {
+   "call": "(self=<ProductionPlan: new-production-plan-fzgzsnchwg>, manufacturing_type=None)",
+   "dump": {
+    "bom_data": "[]",
+    "global get_sub_assembly_items": "<function get_sub_assembly_items>",
+    "row": "<ProductionPlanItem: new-production-plan-khjdotqjez parent=new-production-plan-fzgzsnchwg>",
+    "row. bom_no": "'BOM-SADR0101001-001'",
+    "row. planned_qty": "5",
+    "self": "<ProductionPlan: new-production-plan-fzgzsnchwg>",
+    "self. company": "'Arun'",
+    "warehouse": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.py",
+   "func": "get_sub_assembly_items",
+   "lines": {
+    "820": "\t\t\t\telse None",
+    "821": "\t\t\t)",
+    "822": "\t\t\tget_sub_assembly_items(row.bom_no, bom_data, row.planned_qty, self.company, warehouse=warehouse)",
+    "823": "\t\t\tself.set_sub_assembly_items_based_on_level(row, bom_data, manufacturing_type)",
+    "824": "\t\t\tsub_assembly_items_store.extend(bom_data)"
+   },
+   "lnum": 822
+  },
+  {
+   "call": "(bom_no='BOM-SADR0101001-001', bom_data=[], to_produce_qty=5, company='Arun', warehouse=None, indent=0)",
+   "dump": {
+    "frappe. msgprint": "<function msgprint>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "warehouse": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.py",
+   "func": "get_sub_assembly_items",
+   "lines": {
+    "1576": "",
+    "1577": "def get_sub_assembly_items(bom_no, bom_data, to_produce_qty, company, warehouse=None, indent=0):",
+    "1578": "\tfrappe.msgprint(warehouse)",
+    "1579": "\tdata = get_bom_children(parent=bom_no)",
+    "1580": "\tfor d in data:"
+   },
+   "lnum": 1578
+  },
+  {
+   "call": "(msg=None, title=None, raise_exception=False, as_table=False, as_list=False, indicator=None, alert=False, primary_action=None, is_minimizable=False, wide=False)",
+   "dump": {
+    "_strip_html_tags": "<functools._lru_cache_wrapper object>",
+    "msg": "None",
+    "out": "{'message': None}",
+    "out. message": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "msgprint",
+   "lines": {
+    "467": "\t\t\tmsg = [_strip_html_tags(msg) for msg in out.message]",
+    "468": "\t\telse:",
+    "469": "\t\t\tmsg = _strip_html_tags(out.message)",
+    "470": "",
+    "471": "\tif flags.print_messages and out.message:"
+   },
+   "lnum": 469
+  },
+  {
+   "call": "(message=None)",
+   "dump": {
+    "message": "None",
+    "strip_html_tags": "<function strip_html_tags>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "_strip_html_tags",
+   "lines": {
+    "444": "\t@functools.lru_cache(maxsize=1024)",
+    "445": "\tdef _strip_html_tags(message):",
+    "446": "\t\treturn strip_html_tags(message)",
+    "447": "",
+    "448": "\tdef _raise_exception():"
+   },
+   "lnum": 446
+  },
+  {
+   "call": "(text=None)",
+   "dump": {
+    "HTML_TAGS_PATTERN. sub": "<built-in method sub of re.Pattern object>",
+    "global HTML_TAGS_PATTERN": "re.compile('\\\\<[^>]*\\\\>')",
+    "text": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py",
+   "func": "strip_html_tags",
+   "lines": {
+    "408": "def strip_html_tags(text):",
+    "409": "\t\"\"\"Remove html tags from text\"\"\"",
+    "410": "\treturn HTML_TAGS_PATTERN.sub(\"\", text)",
+    "411": "",
+    "412": ""
+   },
+   "lnum": 410
+  }
+ ],
+ "locals": {
+  "text": "None"
+ },
+ "pyver": "Python 3.10.12: /home/arun/Projects/frappe-bench/env/bin/python (prefix: /home/arun/Projects/frappe-bench/env)",
+ "timestamp": "2023-11-23 12:45:59.901388",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py\", line 95, in application\n    response = frappe.api.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py\", line 55, in handle\n    return frappe.handler.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 47, in handle\n    data = execute_cmd(cmd)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 85, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 1622, in call\n    return fn(*args, **newargs)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 320, in run_doc_method\n    response = doc.run_method(method, args)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py\", line 919, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py\", line 1281, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py\", line 1263, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/model/document.py\", line 916, in fn\n    return method_object(*args, **kwargs)\n  File \"/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.py\", line 822, in get_sub_assembly_items\n    get_sub_assembly_items(row.bom_no, bom_data, row.planned_qty, self.company, warehouse=warehouse)\n  File \"/home/arun/Projects/frappe-bench/apps/erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.py\", line 1578, in get_sub_assembly_items\n    frappe.msgprint(warehouse)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 469, in msgprint\n    msg = _strip_html_tags(out.message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 446, in _strip_html_tags\n    return strip_html_tags(message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py\", line 410, in strip_html_tags\n    return HTML_TAGS_PATTERN.sub(\"\", text)\nTypeError: expected string or bytes-like object\n"
+}

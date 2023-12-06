@@ -1,0 +1,495 @@
+{
+ "etype": "TypeError",
+ "evalue": "TypeError('expected string or bytes-like object')",
+ "exception": {
+  "args": [
+   40,
+   39,
+   101,
+   120,
+   112,
+   101,
+   99,
+   116,
+   101,
+   100,
+   32,
+   115,
+   116,
+   114,
+   105,
+   110,
+   103,
+   32,
+   111,
+   114,
+   32,
+   98,
+   121,
+   116,
+   101,
+   115,
+   45,
+   108,
+   105,
+   107,
+   101,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   39,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   84,
+   121,
+   112,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/api/method/frappe....arent=1&cached_timestamp=&_=1701769699478' [GET]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "93": "",
+    "94": "\t\telif request.path.startswith(\"/api/\"):",
+    "95": "\t\t\tresponse = frappe.api.handle()",
+    "96": "",
+    "97": "\t\telif request.path.startswith(\"/backups\"):"
+   },
+   "lnum": 95
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "53": "\tif call == \"method\":",
+    "54": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "55": "\t\treturn frappe.handler.handle()",
+    "56": "",
+    "57": "\telif call == \"resource\":"
+   },
+   "lnum": 55
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'frappe.desk.form.load.getdoctype'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "45": "",
+    "46": "\tif cmd != \"login\":",
+    "47": "\t\tdata = execute_cmd(cmd)",
+    "48": "",
+    "49": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 47
+  },
+  {
+   "call": "(cmd='frappe.desk.form.load.getdoctype', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'doctype': 'demo', 'with_parent': '1', 'cached_...': '', 'cmd': 'frappe.desk.form.load.getdoctype'}",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function getdoctype>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "83": "\t\tis_valid_http_method(method)",
+    "84": "",
+    "85": "\treturn frappe.call(method, **frappe.form_dict)",
+    "86": "",
+    "87": ""
+   },
+   "lnum": 85
+  },
+  {
+   "call": "(fn=<function getdoctype>, *args=(), **kwargs={'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype', 'doctype': 'demo', 'with_parent': '1'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function getdoctype>",
+    "newargs": "{'cached_timestamp': '', 'doctype': 'demo', 'with_parent': '1'}"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1620": "\tnewargs = get_newargs(fn, kwargs)",
+    "1621": "",
+    "1622": "\treturn fn(*args, **newargs)",
+    "1623": "",
+    "1624": ""
+   },
+   "lnum": 1622
+  },
+  {
+   "call": "(doctype='demo', with_parent='1', cached_timestamp='')",
+   "dump": {
+    "docs": "[]",
+    "doctype": "'demo'",
+    "global get_meta_bundle": "<function get_meta_bundle>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/load.py",
+   "func": "getdoctype",
+   "lines": {
+    "70": "",
+    "71": "\tif not docs:",
+    "72": "\t\tdocs = get_meta_bundle(doctype)",
+    "73": "",
+    "74": "\tfrappe.response[\"user_settings\"] = get_user_settings(parent_dt or doctype)"
+   },
+   "lnum": 72
+  },
+  {
+   "call": "(doctype='demo')",
+   "dump": {
+    "bundle": "undefined",
+    "doctype": "'demo'",
+    "frappe. desk": "<module 'frappe.desk' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/__init__.py'>",
+    "frappe.desk. form": "<module 'frappe.desk.form' from '/home/arun/Proj...-bench/apps/frappe/frappe/desk/form/__init__.py'>",
+    "frappe.desk.form. meta": "<module 'frappe.desk.form.meta' from '/home/arun...appe-bench/apps/frappe/frappe/desk/form/meta.py'>",
+    "frappe.desk.form.meta. get_meta": "<function get_meta>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/load.py",
+   "func": "get_meta_bundle",
+   "lines": {
+    "81": "",
+    "82": "def get_meta_bundle(doctype):",
+    "83": "\tbundle = [frappe.desk.form.meta.get_meta(doctype)]",
+    "84": "\tfor df in bundle[0].fields:",
+    "85": "\t\tif df.fieldtype in frappe.model.table_fields:"
+   },
+   "lnum": 83
+  },
+  {
+   "call": "(doctype='demo', cached=True)",
+   "dump": {
+    "doctype": "'demo'",
+    "global FormMeta": "<class 'frappe.desk.form.meta.FormMeta'>",
+    "meta": "undefined"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py",
+   "func": "get_meta",
+   "lines": {
+    "42": "\t\t\tfrappe.cache().hset(\"doctype_form_meta\", doctype, meta)",
+    "43": "\telse:",
+    "44": "\t\tmeta = FormMeta(doctype)",
+    "45": "",
+    "46": "\tif frappe.local.lang != \"en\":"
+   },
+   "lnum": 44
+  },
+  {
+   "call": "(self=<FormMeta: demo>, doctype='demo')",
+   "dump": {
+    "self": "<FormMeta: demo>",
+    "self. load_assets": "<bound method FormMeta.load_assets of <FormMeta: demo>>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py",
+   "func": "__init__",
+   "lines": {
+    "53": "\tdef __init__(self, doctype):",
+    "54": "\t\tsuper().__init__(doctype)",
+    "55": "\t\tself.load_assets()",
+    "56": "",
+    "57": "\tdef load_assets(self):"
+   },
+   "lnum": 55
+  },
+  {
+   "call": "(self=<FormMeta: demo>)",
+   "dump": {
+    "self": "<FormMeta: demo>",
+    "self. load_templates": "<bound method FormMeta.load_templates of <FormMeta: demo>>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py",
+   "func": "load_assets",
+   "lines": {
+    "67": "\t\t\tself.load_print_formats()",
+    "68": "\t\t\tself.load_workflows()",
+    "69": "\t\t\tself.load_templates()",
+    "70": "\t\t\tself.load_dashboard()",
+    "71": "\t\t\tself.load_kanban_meta()"
+   },
+   "lnum": 69
+  },
+  {
+   "call": "(self=<FormMeta: demo>)",
+   "dump": {
+    "global load_doctype_module": "<function load_doctype_module>",
+    "module": "undefined",
+    "self": "<FormMeta: demo>",
+    "self. name": "'demo'"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py",
+   "func": "load_templates",
+   "lines": {
+    "249": "\tdef load_templates(self):",
+    "250": "\t\tif not self.custom:",
+    "251": "\t\t\tmodule = load_doctype_module(self.name)",
+    "252": "\t\t\tapp = module.__name__.split(\".\", 1)[0]",
+    "253": "\t\t\ttemplates = {}"
+   },
+   "lnum": 251
+  },
+  {
+   "call": "(doctype='demo', module='Website', prefix='', suffix='')",
+   "dump": {
+    "frappe. get_module": "<function get_module>",
+    "global doctype_python_modules": "{('frappe', 'DocField', '', ''): <module 'frappe.core.doctype.docfield.docfield' ...frappe/frappe/core/doctype/docfield/docfield.py'>, ('frappe', 'DocPerm', '', ''): <module 'frappe.core.doctype.docperm.docperm' fr...s/frappe/frappe/core/doctype/docperm/docperm.py'>}",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "key": "('frappe', 'demo', '', '')",
+    "module_name": "'frappe.website.doctype.demo.demo'"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/modules/utils.py",
+   "func": "load_doctype_module",
+   "lines": {
+    "243": "\ttry:",
+    "244": "\t\tif key not in doctype_python_modules:",
+    "245": "\t\t\tdoctype_python_modules[key] = frappe.get_module(module_name)",
+    "246": "\texcept ImportError as e:",
+    "247": "\t\tmsg = f\"Module import failed for {doctype}, the DocType you're trying to open might be deleted.\""
+   },
+   "lnum": 245
+  },
+  {
+   "call": "(modulename='frappe.website.doctype.demo.demo')",
+   "dump": {
+    "global importlib": "<module 'importlib' from '/usr/lib/python3.10/importlib/__init__.py'>",
+    "importlib. import_module": "<function import_module>",
+    "modulename": "'frappe.website.doctype.demo.demo'"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "get_module",
+   "lines": {
+    "1340": "def get_module(modulename):",
+    "1341": "\t\"\"\"Returns a module object for given Python module name using `importlib.import_module`.\"\"\"",
+    "1342": "\treturn importlib.import_module(modulename)",
+    "1343": "",
+    "1344": ""
+   },
+   "lnum": 1342
+  },
+  {
+   "call": "(name='frappe.website.doctype.demo.demo', package=None)",
+   "dump": {
+    "_bootstrap. _gcd_import": "<function _gcd_import>",
+    "global _bootstrap": "<module '_frozen_importlib' (frozen)>",
+    "level": "0",
+    "name": "'frappe.website.doctype.demo.demo'",
+    "package": "None"
+   },
+   "file": "/usr/lib/python3.10/importlib/__init__.py",
+   "func": "import_module",
+   "lines": {
+    "124": "                break",
+    "125": "            level += 1",
+    "126": "    return _bootstrap._gcd_import(name[level:], package, level)",
+    "127": "",
+    "128": ""
+   },
+   "lnum": 126
+  },
+  {
+   "call": "(name='frappe.website.doctype.demo.demo', package=None, level=0)",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_gcd_import",
+   "lines": {},
+   "lnum": 1050
+  },
+  {
+   "call": "(name='frappe.website.doctype.demo.demo', import_=<function _gcd_import>)",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_find_and_load",
+   "lines": {},
+   "lnum": 1027
+  },
+  {
+   "call": "(name='frappe.website.doctype.demo.demo', import_=<function _gcd_import>)",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_find_and_load_unlocked",
+   "lines": {},
+   "lnum": 1006
+  },
+  {
+   "call": "(spec=ModuleSpec(name='frappe.website.doctype.demo.dem...apps/frappe/frappe/website/doctype/demo/demo.py'))",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_load_unlocked",
+   "lines": {},
+   "lnum": 688
+  },
+  {
+   "call": "(self=<_frozen_importlib_external.SourceFileLoader object>, module=<module 'frappe.website.doctype.demo.demo' from ...apps/frappe/frappe/website/doctype/demo/demo.py'>)",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap_external>",
+   "func": "exec_module",
+   "lines": {},
+   "lnum": 883
+  },
+  {
+   "call": "(f=<built-in function exec>, *args=(<code object <module> at 0x7f372d1a12c0, file \"/...ppe/frappe/website/doctype/demo/demo.py\", line 1>, {'Document': <class 'frappe.model.document.Document'>, '_': <function _>, '__builtins__': {'ArithmeticError': <class 'ArithmeticError'>, 'AssertionError': <class 'AssertionError'>, 'AttributeError': <class 'AttributeError'>, 'BaseException': <class 'BaseException'>, 'BlockingIOError': <class 'BlockingIOError'>, 'BrokenPipeError': <class 'BrokenPipeError'>, 'BufferError': <class 'BufferError'>, 'BytesWarning': <class 'BytesWarning'>, 'ChildProcessError': <class 'ChildProcessError'>, 'ConnectionAbortedError': <class 'ConnectionAbortedError'>, ...}, '__cached__': '/home/arun/Projects/frappe-bench/apps/frappe/fra...ite/doctype/demo/__pycache__/demo.cpython-310.pyc', '__doc__': None, '__file__': '/home/arun/Projects/frappe-bench/apps/frappe/frappe/website/doctype/demo/demo.py', '__loader__': <_frozen_importlib_external.SourceFileLoader object>, '__name__': 'frappe.website.doctype.demo.demo', '__package__': 'frappe.website.doctype.demo', '__spec__': ModuleSpec(name='frappe.website.doctype.demo.dem...apps/frappe/frappe/website/doctype/demo/demo.py'), ...}), **kwds={})",
+   "dump": {},
+   "file": "/home/arun/Projects/frappe-bench/sites/<frozen importlib._bootstrap>",
+   "func": "_call_with_frames_removed",
+   "lines": {},
+   "lnum": 241
+  },
+  {
+   "call": "()",
+   "dump": {
+    "_": "<function _>",
+    "frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "frappe. msgprint": "<function msgprint>",
+    "x": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)",
+    "y": "'2023-12-15 15:18:19.809458'",
+    "z": "datetime.datetime(2029, 12, 5, 15, 18, 19, 809483)"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/website/doctype/demo/demo.py",
+   "func": "<module>",
+   "lines": {
+    "18": "z=add_to_date(None, years=6) # datetime.datetime(2027, 5, 21, 15, 32, 31, 652089)",
+    "19": "",
+    "20": "frappe.msgprint(_(x,y,z))",
+    "21": "class demo(Document):",
+    "22": "\tpass"
+   },
+   "lnum": 20
+  },
+  {
+   "call": "(msg=datetime.datetime(2024, 2, 5, 15, 18, 19, 809440), title=None, raise_exception=False, as_table=False, as_list=False, indicator=None, alert=False, primary_action=None, is_minimizable=False, wide=False)",
+   "dump": {
+    "_strip_html_tags": "<functools._lru_cache_wrapper object>",
+    "msg": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)",
+    "out": "{'message': datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)}",
+    "out. message": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "msgprint",
+   "lines": {
+    "467": "\t\t\tmsg = [_strip_html_tags(msg) for msg in out.message]",
+    "468": "\t\telse:",
+    "469": "\t\t\tmsg = _strip_html_tags(out.message)",
+    "470": "",
+    "471": "\tif flags.print_messages and out.message:"
+   },
+   "lnum": 469
+  },
+  {
+   "call": "(message=datetime.datetime(2024, 2, 5, 15, 18, 19, 809440))",
+   "dump": {
+    "message": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)",
+    "strip_html_tags": "<function strip_html_tags>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "_strip_html_tags",
+   "lines": {
+    "444": "\t@functools.lru_cache(maxsize=1024)",
+    "445": "\tdef _strip_html_tags(message):",
+    "446": "\t\treturn strip_html_tags(message)",
+    "447": "",
+    "448": "\tdef _raise_exception():"
+   },
+   "lnum": 446
+  },
+  {
+   "call": "(text=datetime.datetime(2024, 2, 5, 15, 18, 19, 809440))",
+   "dump": {
+    "HTML_TAGS_PATTERN. sub": "<built-in method sub of re.Pattern object>",
+    "global HTML_TAGS_PATTERN": "re.compile('\\\\<[^>]*\\\\>')",
+    "text": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py",
+   "func": "strip_html_tags",
+   "lines": {
+    "408": "def strip_html_tags(text):",
+    "409": "\t\"\"\"Remove html tags from text\"\"\"",
+    "410": "\treturn HTML_TAGS_PATTERN.sub(\"\", text)",
+    "411": "",
+    "412": ""
+   },
+   "lnum": 410
+  }
+ ],
+ "locals": {
+  "text": "datetime.datetime(2024, 2, 5, 15, 18, 19, 809440)"
+ },
+ "pyver": "Python 3.10.12: /home/arun/Projects/frappe-bench/env/bin/python (prefix: /home/arun/Projects/frappe-bench/env)",
+ "timestamp": "2023-12-05 15:18:19.820005",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py\", line 95, in application\n    response = frappe.api.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/api.py\", line 55, in handle\n    return frappe.handler.handle()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 47, in handle\n    data = execute_cmd(cmd)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/handler.py\", line 85, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 1622, in call\n    return fn(*args, **newargs)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/load.py\", line 72, in getdoctype\n    docs = get_meta_bundle(doctype)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/load.py\", line 83, in get_meta_bundle\n    bundle = [frappe.desk.form.meta.get_meta(doctype)]\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py\", line 44, in get_meta\n    meta = FormMeta(doctype)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py\", line 55, in __init__\n    self.load_assets()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py\", line 69, in load_assets\n    self.load_templates()\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/desk/form/meta.py\", line 251, in load_templates\n    module = load_doctype_module(self.name)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/modules/utils.py\", line 245, in load_doctype_module\n    doctype_python_modules[key] = frappe.get_module(module_name)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 1342, in get_module\n    return importlib.import_module(modulename)\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1006, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 688, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 883, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/website/doctype/demo/demo.py\", line 20, in <module>\n    frappe.msgprint(_(x,y,z))\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 469, in msgprint\n    msg = _strip_html_tags(out.message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py\", line 446, in _strip_html_tags\n    return strip_html_tags(message)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/utils/__init__.py\", line 410, in strip_html_tags\n    return HTML_TAGS_PATTERN.sub(\"\", text)\nTypeError: expected string or bytes-like object\n"
+}

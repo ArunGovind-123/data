@@ -1,0 +1,135 @@
+{
+ "etype": "SessionStopped",
+ "evalue": "SessionStopped('Session Stopped')",
+ "exception": {
+  "args": [
+   40,
+   39,
+   83,
+   101,
+   115,
+   115,
+   105,
+   111,
+   110,
+   32,
+   83,
+   116,
+   111,
+   112,
+   112,
+   101,
+   100,
+   39,
+   44,
+   41
+  ],
+  "http_status_code": [
+   53,
+   48,
+   51
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   83,
+   101,
+   115,
+   115,
+   105,
+   111,
+   110,
+   83,
+   116,
+   111,
+   112,
+   112,
+   101,
+   100,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/app/production-plan/new-production-plan-aqovzneihr' [GET]>)",
+   "dump": {
+    "global init_request": "<function init_request>",
+    "request": "<Request 'http://0.0.0.0:8000/app/production-plan/new-production-plan-aqovzneihr' [GET]>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "82": "\t\trollback = True",
+    "83": "",
+    "84": "\t\tinit_request(request)",
+    "85": "",
+    "86": "\t\tfrappe.api.validate_auth()"
+   },
+   "lnum": 84
+  },
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/app/production-plan/new-production-plan-aqovzneihr' [GET]>)",
+   "dump": {
+    "frappe. SessionStopped": "<class 'frappe.exceptions.SessionStopped'>",
+    "global frappe": "<module 'frappe' from '/home/arun/Projects/frappe-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "init_request",
+   "lines": {
+    "161": "\t\t\tsetup_read_only_mode()",
+    "162": "\t\telse:",
+    "163": "\t\t\traise frappe.SessionStopped(\"Session Stopped\")",
+    "164": "\telse:",
+    "165": "\t\tfrappe.connect(set_admin_as_user=False)"
+   },
+   "lnum": 163
+  }
+ ],
+ "locals": {
+  "request": "<Request 'http://0.0.0.0:8000/app/production-plan/new-production-plan-aqovzneihr' [GET]>",
+  "site": "arun.com"
+ },
+ "pyver": "Python 3.10.12: /home/arun/Projects/frappe-bench/env/bin/python (prefix: /home/arun/Projects/frappe-bench/env)",
+ "timestamp": "2023-11-23 12:34:52.676408",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py\", line 84, in application\n    init_request(request)\n  File \"/home/arun/Projects/frappe-bench/apps/frappe/frappe/app.py\", line 163, in init_request\n    raise frappe.SessionStopped(\"Session Stopped\")\nfrappe.exceptions.SessionStopped: Session Stopped\n"
+}

@@ -1,0 +1,57 @@
+2023-12-05 10:22:49,836 ERROR frappe New Exception collected with id: 2023-12-05 10:22:49.824747-127.0.0.1-373
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 10:22:50,331 ERROR frappe New Exception collected with id: 2023-12-05 10:22:50.325698-127.0.0.1-b58
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 10:37:16,328 ERROR frappe New Exception collected with id: 2023-12-05 10:37:16.319586-127.0.0.1-d10
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 10:37:16,876 ERROR frappe New Exception collected with id: 2023-12-05 10:37:16.870137-127.0.0.1-d60
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 10:37:31,246 ERROR frappe New Exception collected with id: 2023-12-05 10:37:31.236927-127.0.0.1-06f
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 15:16:56,554 ERROR frappe New Exception collected with id: 2023-12-05 15:16:56.427452-127.0.0.1-547
+Site: arun.com
+Form Dict: {'doctype': 'demo', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 15:18:19,903 ERROR frappe New Exception collected with id: 2023-12-05 15:18:19.819885-127.0.0.1-649
+Site: arun.com
+Form Dict: {'doctype': 'demo', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 16:56:36,645 ERROR frappe New Exception collected with id: 2023-12-05 16:56:36.500314-127.0.0.1-ac6
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-DS05174-02-001', 'parent': 'BOM-DS05174-02-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 16:56:37,153 ERROR frappe New Exception collected with id: 2023-12-05 16:56:37.150111-127.0.0.1-db1
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-DS05174-02-001', 'parent': 'BOM-DS05174-02-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 17:00:41,497 ERROR frappe New Exception collected with id: 2023-12-05 17:00:41.369852-127.0.0.1-1b8
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '2023-04-06 12:47:58.514795', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:01:43,806 ERROR frappe New Exception collected with id: 2023-12-05 17:01:43.722427-127.0.0.1-983
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '2023-04-06 12:47:58.514795', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:04:16,511 ERROR frappe New Exception collected with id: 2023-12-05 17:04:16.166692-127.0.0.1-b03
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '2023-04-06 12:47:58.514795', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:04:25,535 ERROR frappe New Exception collected with id: 2023-12-05 17:04:25.473113-127.0.0.1-185
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:05:53,160 ERROR frappe New Exception collected with id: 2023-12-05 17:05:52.803272-127.0.0.1-0d6
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:10:50,587 ERROR frappe New Exception collected with id: 2023-12-05 17:10:50.340365-127.0.0.1-f6d
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:11:20,309 ERROR frappe New Exception collected with id: 2023-12-05 17:11:20.159553-127.0.0.1-4da
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 17:11:20,825 ERROR frappe New Exception collected with id: 2023-12-05 17:11:20.823407-127.0.0.1-7c3
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'bom': 'BOM-SADR0101001-001', 'parent': 'BOM-SADR0101001-001', 'is_root': 'true', 'cmd': 'erpnext.manufacturing.doctype.bom.bom.get_children'}
+2023-12-05 17:13:21,101 ERROR frappe New Exception collected with id: 2023-12-05 17:13:20.877741-127.0.0.1-b2e
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '2023-04-06 12:47:58.514795', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2023-12-05 17:14:44,771 ERROR frappe New Exception collected with id: 2023-12-05 17:14:44.687274-127.0.0.1-834
+Site: arun.com
+Form Dict: {'doctype': 'BOM', 'with_parent': '1', 'cached_timestamp': '2023-04-06 12:47:58.514795', 'cmd': 'frappe.desk.form.load.getdoctype'}
